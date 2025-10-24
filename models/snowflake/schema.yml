@@ -32,4 +32,4 @@ models:
           - relationships:
               arguments:
                 to: ref('stg_customers')
-                field: customer_id
+                field: customer_id 
