@@ -6,9 +6,20 @@ sources:
     tables:
       - name: MEMBER_ENROLLMENTS
         description: it contains the member enrollment details.
+        config:
+          loaded_at_field: ENROLL_DATE
+          freshness:
+            warn_after: {count: 1, period: day}
+            error_after: {count: 2, period: day}
       - name: CLAIMS
         description: It contains the claim details.
       - name: PLANS
         description: It contains the member plan details.
       - name: PROVIDERS
         description: It contains the provider details.
+    config:
+      meta:
+        domain: raw_thryve
+        owner: jayavani.devarasetty@thryvedigital.com
+        pii_handling: masked
+        sla: critical
