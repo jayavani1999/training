@@ -1,7 +1,3 @@
-{{ config(
-    materialized='table'
-) }}
-
 with member_enrollments as (
     select
        *
@@ -25,7 +21,8 @@ select
     a.cancel_date,
     a.region,
     coalesce(b.total_claim_count, 0) as total_claim_count, 
-    coalesce(b.total_claim_amount, 0) as total_claim_amount 
+    coalesce(b.total_claim_amount, 0) as total_claim_amount,
+    current_timestamp as last_update_ts 
 from member_enrollments a
  join claims_aggr b
     on a.member_id = b.member_id
