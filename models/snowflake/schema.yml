@@ -7,6 +7,11 @@ models:
         data_tests:
           - unique
           - not_null
+      - name: number_of_orders
+        data_tests:
+          - positive
+          
+          
 
   - name: stg_customers
     columns:
@@ -33,3 +38,4 @@ models:
               arguments:
                 to: ref('stg_customers')
                 field: customer_id 
+                
