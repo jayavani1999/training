@@ -1,5 +1,5 @@
 sources:
-    - name: dbt_poc_schema
+    - name: dbt_poc
       description: This is a replica of the Postgres database used by our app
       database: dbt_poc
       schema: dbt_poc_schema
